@@ -22,5 +22,6 @@ copia = contatos.copy()
 
 #Usando keys
 user={"id01":{"nome":"Renato Miranda","telefone":"9999999"}}
-result = user.keys()
+result = user.keys() #Vai retornar as chaves de um dicionário. 
 print(result)
+
