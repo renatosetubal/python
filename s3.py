@@ -56,6 +56,9 @@ def sync_bucket_to_local(s3_client, bucket, local_dir):
             for obj in page["Contents"]:
                 key = obj["Key"]
                 local_path = os.path.join(local_dir, bucket, key)  # Inclui o nome do bucket no caminho local
+                if os.path.exists(local_path):
+                    print(f"Arquivo já existe: {key}. Pulando...")
+                    continue
                 # Cria subdiretórios, se necessário
                 os.makedirs(os.path.dirname(local_path), exist_ok=True)
                 # Baixa o objeto para o diretório local

@@ -1,0 +1,10 @@
+movie="Jogos Mortais XII"
+print(movie.upper())
+print(movie.lower())
+print(movie.capitalize())
+print(movie.title())
+print(movie.center(20,'-'))
+print(movie.find("Mor"))
+print(movie.replace("Mortais","Vivais"))
+print(movie.split(" "))
+print(movie.replace(" ",""))
