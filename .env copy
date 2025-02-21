@@ -1,0 +1,3 @@
+SOURCE_ENDPOINT = "https://seuminio:9000"  
+SOURCE_ACCESS_KEY = "usuariodeacesso"
+SOURCE_SECRET_KEY = "senha de acesso"
