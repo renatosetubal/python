@@ -19,7 +19,7 @@ iface = gr.Interface(
         gr.Textbox(label="Texto", placeholder="Digite um texto aqui..."),
         gr.Slider(minimum=0, maximum=100, label="Número",value=0),
         gr.Image(type="pil", label="Imagem"),
-        gr.Textbox(label="Lista de texto", lines=4, placeholder="Item 1\n Ietm2\ Item3", type="text"),
+        gr.Textbox(label="Lista de texto", lines=4, placeholder="Item 1\nIetm 2\nItem 3", type="text"),
         gr.ColorPicker(label="Selecione uma cor"),
         gr.CheckboxGroup(
             label="Escolha suas opções...", 
