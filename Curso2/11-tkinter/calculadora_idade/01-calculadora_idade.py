@@ -61,7 +61,7 @@ app_years = Label(bottom_frame, text="27", height=1, padx=0,
                        relief="flat", anchor="center", font=("Ivy 25 bold"), bg=color1, fg=color3)
 app_years.place(x=60, y=135)
 
-app_label_years = Label(bottom_frame, text="Years", height=1, padx=0,  
+app_label_years = Label(bottom_frame, text="Anos", height=1, padx=0,  
                        relief="flat", anchor="center", font=("Ivy 11 bold"), bg=color1, fg=color3)
 app_label_years.place(x=50, y=175)
 
@@ -69,7 +69,7 @@ app_months = Label(bottom_frame, text="27", height=1, padx=0,
                        relief="flat", anchor="center", font=("Ivy 12 bold"), bg=color1, fg=color3)
 app_months.place(x=140, y=135)
 
-app_label_months = Label(bottom_frame, text="Months", height=1, padx=0,  
+app_label_months = Label(bottom_frame, text="Meses", height=1, padx=0,  
                        relief="flat", anchor="center", font=("Ivy 11 bold"), bg=color1, fg=color3)
 app_label_months.place(x=130, y=175)
 
@@ -77,7 +77,7 @@ app_days = Label(bottom_frame, text="27", height=1, padx=0,
                        relief="flat", anchor="center", font=("Ivy 12 bold"), bg=color1, fg=color3)
 app_days.place(x=220, y=135)
 
-app_label_days = Label(bottom_frame, text="Days", height=1, padx=0,  
+app_label_days = Label(bottom_frame, text="Dias", height=1, padx=0,  
                        relief="flat", anchor="center", font=("Ivy 11 bold"), bg=color1, fg=color3)
 app_label_days.place(x=210, y=175)
 

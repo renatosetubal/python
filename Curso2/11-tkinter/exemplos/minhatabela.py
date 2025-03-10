@@ -60,6 +60,7 @@ tree.column("Idade", width=80, anchor="center")
 tree.column("Cidade", width=250)
 tree.pack(side="top", fill="both", expand=True)
 
+
 # Função para obter o item selecionado
 def item_selecionado(event):
     selected = tree.selection()
