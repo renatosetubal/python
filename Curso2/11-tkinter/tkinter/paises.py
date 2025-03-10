@@ -23,8 +23,6 @@ paises_simbolo = []
 for i in paises.keys():
     paises_simbolo.append(i.lower())
     
-print(paises_simbolo)
-
 def dados_pais():
     index_aleatorio = randrange(0, len(paises_simbolo))
     imagem = "img/{}.{}".format(paises_simbolo[index_aleatorio], "png")
