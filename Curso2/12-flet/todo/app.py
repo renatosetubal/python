@@ -1,0 +1,7 @@
+import flet as ft 
+
+def main(page:ft.Page):
+    page.title = "Tarefas"
+    
+    page.add(ft.Texx("Corpo do sistema"))
+ft.app(target=main)
