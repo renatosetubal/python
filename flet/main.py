@@ -1,20 +1,18 @@
 import flet as ft
+from head import *
+from footer import *
 
 def main(page: ft.Page):
     page.title = "Aplicativo de Três Camadas"
     page.padding = 0  # Remove o padding padrão para usar toda a tela
-    
-    # Configurando cores para cada seção
     menu_color = ft.colors.BLUE_700
-    content_color = ft.colors.WHITE
-    footer_color = ft.colors.BLUE_GREY_800
-    
+
     # Criando itens de menu
     def menu_item_clicked(e):
         # Atualiza o conteúdo quando um item de menu é clicado
         content_text.value = f"Conteúdo da seção: {e.control.text}"
         page.update()
-    
+
     menu_items = [
         ft.TextButton(text="Pesquisar", on_click=menu_item_clicked),
         ft.TextButton(text="Cadastrar", on_click=menu_item_clicked),
@@ -22,11 +20,11 @@ def main(page: ft.Page):
         ft.TextButton(text="Listar", on_click=menu_item_clicked),
         ft.TextButton(text="Contato", on_click=menu_item_clicked),
     ]
-    
+
     # Para cada botão no menu, defina a cor do texto como branca
     for item in menu_items:
         item.style = ft.ButtonStyle(color=ft.colors.WHITE)
-    
+
     # 1. Menu (Camada Superior)
     menu = ft.Container(
         content=ft.Row(
@@ -44,6 +42,9 @@ def main(page: ft.Page):
         bgcolor=menu_color,
         height=60,
     )
+    # Configurando cores para cada seção
+   
+    content_color = ft.colors.WHITE
     
     # 2. Conteúdo (Camada do Meio)
     escolha_pesquisa=ft.RadioGroup(
@@ -103,25 +104,7 @@ def main(page: ft.Page):
     )
     
     # 3. Rodapé (Camada Inferior)
-    footer = ft.Container(
-        content=ft.Row(
-            [
-                ft.Text("© 2025 Meu Aplicativo. Todos os direitos reservados.", color=ft.colors.WHITE),
-                ft.Container(expand=True),
-                ft.Row(
-                    [
-                        ft.TextButton("Política de Privacidade", style=ft.ButtonStyle(color=ft.colors.WHITE)),
-                        ft.TextButton("Termos de Uso", style=ft.ButtonStyle(color=ft.colors.WHITE)),
-                    ]
-                ),
-            ],
-            alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
-            vertical_alignment=ft.CrossAxisAlignment.CENTER,
-        ),
-        padding=ft.padding.symmetric(horizontal=20, vertical=10),
-        bgcolor=footer_color,
-        height=50,
-    )
+    
     
     # Organizando as três camadas em uma coluna
     page.add(
