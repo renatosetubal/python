@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routes.jogador import jogador_router
+from routes.jogador_route import *
 
 app = FastAPI()
 

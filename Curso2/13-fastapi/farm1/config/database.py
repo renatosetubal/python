@@ -1,5 +1,3 @@
 from pymongo import MongoClient
 
-#conexao = MongoClient("mongodb://localhost/27017/farm1")
-conexao = MongoClient()
-
+conn = MongoClient("mongodb://localhost/local")
