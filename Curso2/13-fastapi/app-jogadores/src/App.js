@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import JogadorList from './components/JogadorList';
 
 function App() {
   const [jogadorList, setJogadorList] = useState([{}]);
@@ -13,10 +14,26 @@ function App() {
     axios.get('http://localhost:8000/jogadores')
       .then(resposta => {
         console.log(resposta.data)
+        setJogadorList(Response.data)
       }).catch(
-        (erro) => { console.log(erro) }
+        (error) => { console.log(error) }
       )
   })
+
+  const adicionaJogador = () => {
+    const jogador = {
+      'jogador_nome': jogadorNome,
+      'jogador_idade': jogadorIdade,
+      'jogador_time': jogadorTime
+    }
+    axios.post('http://localhost:8000/jogadores', jogador)
+      .then(resposta => {
+        alert(resposta);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }
 
   return (
     <div className="container">
@@ -26,13 +43,16 @@ function App() {
         <div className='card-body text-center'>
           <h5 className='card text-center text-white bg-dark pb-1'>Cadastro do Jogador</h5>
           <span className='card-text'>
-            <input className='mb-2 form-control' placeholder='Informe o nome'></input>
-            <input className='mb-2 form-control' placeholder='Informe a idade'></input>
-            <input className='mb-2 form-control' placeholder='Informe o time'></input>
-            <button className='btn btn-outline-success mb-4'>Cadastrar</button>
+            <input onChange={evento => setJogadorNome(evento.target.value)} className='mb-2 form-control' placeholder='Informe o nome'></input>
+            <input onChange={evento => setJogadorIdade(evento.target.value)} className='mb-2 form-control' placeholder='Informe a idade'></input>
+            <input onChange={evento => setJogadorTime(evento.target.value)} className='mb-2 form-control' placeholder='Informe o time'></input>
+            <button onClick={adicionaJogador} className='btn btn-outline-success mb-4'>Cadastrar</button>
           </span>
+        </div>
+        <div>
           <h5 className='card text-center text-white bg-dark pb-1 mb-4'>Lista de Jogadores</h5>
         </div>
+        <JogadorList jogadorList={jogadorList}/>
         <h6 className='card text-center text-light bg-success py-1'>&copy; Iwit - 2025</h6>
       </div>
     </div>
