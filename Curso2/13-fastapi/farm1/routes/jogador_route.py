@@ -24,9 +24,36 @@ def busca_jogador_id(jogador_id):
         )
     )
 
-
 # Insere novos Jogadores
 @jogador_router.post('/jogadores')
 async def cadastra_jogadores(jogador: Jogador):
     conn.local.jogador.insert_one(dict(jogador))
     return listaJogadoresEntidade(conn.local.jogador.find())
+
+# Atualiza um jogador
+@jogador_router.put("/jogadores/{jogador_id}")
+async def atualiza_jogador(jogador_id, jogador: Jogador):
+    #Caputar informações baseadas em id
+    conn.local.jogador.find_one_and_update(
+        {
+            "_id":ObjectId(jogador_id)
+        },
+        {
+            "$set": dict(jogador)
+        }
+    )
+    return jogadorEntidade(
+        conn.local.jogador.find_one({
+            "_id":ObjectId(jogador_id)
+        })
+    )
+# Excluir jogadores
+@jogador_router.delete('/jogadores/{jogador_id}')
+async def deleta_jogador(jogador_id, jogador: Jogador):
+    return jogadorEntidade(
+        conn.local.jogador.find_one_and_delete(
+            {
+                "_id":ObjectId(jogador_id)
+            }
+        )
+    )
