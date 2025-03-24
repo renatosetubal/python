@@ -3,7 +3,9 @@ from routes.jogador_route import *
 from fastapi.middleware.cors import CORSMiddleware
 
 client_app = [
-    "http://localhost:3000"
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://0.0.0.0:3000"
 ]
 app = FastAPI()
 

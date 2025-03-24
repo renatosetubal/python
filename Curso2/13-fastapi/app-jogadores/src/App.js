@@ -14,7 +14,7 @@ function App() {
     axios.get('http://localhost:8000/jogadores')
       .then(resposta => {
         console.log(resposta.data)
-        setJogadorList(Response.data)
+        setJogadorList(resposta.data)
       }).catch(
         (error) => { console.log(error) }
       )
@@ -28,7 +28,8 @@ function App() {
     }
     axios.post('http://localhost:8000/jogadores', jogador)
       .then(resposta => {
-        alert(resposta);
+        // alert(resposta);
+        alert("Jogador cadastrado com sucesso!");
       })
       .catch((error) => {
         console.log(error);
@@ -52,7 +53,10 @@ function App() {
         <div>
           <h5 className='card text-center text-white bg-dark pb-1 mb-4'>Lista de Jogadores</h5>
         </div>
-        <JogadorList jogadorList={jogadorList}/>
+        <div className='text-center'>
+          <JogadorList jogadorList={jogadorList} />
+        </div>
+
         <h6 className='card text-center text-light bg-success py-1'>&copy; Iwit - 2025</h6>
       </div>
     </div>
