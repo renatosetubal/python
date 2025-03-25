@@ -1,0 +1,3 @@
+ python-decouple
+ beanie
+ pip install pydantic-settings
